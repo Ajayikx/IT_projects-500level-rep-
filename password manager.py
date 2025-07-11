@@ -24,6 +24,7 @@ def add_password():
     passwords = load_password()
 
     passwords[website] ={
+        "email" : email,
         "username" : username ,
         "password" : password
     }
@@ -62,7 +63,7 @@ def search_password():
 def main():
     while (True):
 
-        print("\n password maneger \n")
+        print("\n password manager \n")
         print("1. Add New Password")
         print("2. Generate Random Password")
         print("3. View Saved Passwords")
@@ -75,7 +76,7 @@ def main():
             add_password()
         elif option == '2':
             try:
-                length = int(input("Enter length of password: ")or ("12"))
+                length = int(input("Enter length of password: ")or "12")
                 generate_password(length)
             except ValueError:
                 print("only integer are allow: ")
